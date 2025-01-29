@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ProgramareMedic.Models.Programari>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="fw-bold">Detalii programari</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary mt-2">Adaugă programare</a>
+</p>
+<table class="table table-bordered table-hover">
+    <caption>Lista programarilor efectuate</caption>
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Pacient
+            </th>
+            <th>
+                Medic
+            </th>
+            <th>
+                Data si Ora Programare
+            </th>
+            <th>
+                Categorie Servicii
+            </th>
+            <th>
+                Actiuni
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pacient.NumeComplet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Medic.NumeComplet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataProgramare)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategorieServicii)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary mx-1">Modifică</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-success mx-1">Detalii</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger mx-1">Șterge</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+﻿@model ProgramareMedic.Models.Medici
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Stergere medic</h1>
+
+<h3>Sunteti sigur ca doriti sa stergeti asta?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeMedic)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeMedic)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PrenumeMedic)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PrenumeMedic)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Specializare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Specializare)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Clinica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Clinica)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sterge" class="btn btn-outline-danger mx-1 px-4" />
+        <a asp-action="Index"  class="btn btn-primary px-4">Inapoi la lista</a>
+    </form>
+</div>

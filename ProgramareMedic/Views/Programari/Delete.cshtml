@@ -1,0 +1,76 @@
+﻿@model ProgramareMedic.Models.Programari
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Sterge programare</h1>
+
+<h3>Sunteti sigur ca doriti sa stergeti asta?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nume Pacient
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pacient.Nume) @Html.DisplayFor(model => model.Pacient.Prenume)
+        </dd>
+
+        <dt class="col-sm-2">
+            Vârsta Pacient
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pacient.Varsta)
+        </dd>
+
+        <dt class="col-sm-2">
+            Adresa Pacient
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pacient.Adresa)
+        </dd>
+        <hr />
+        <dt class="col-sm-2">
+            Nume Medic
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Medic.NumeMedic) @Html.DisplayFor(model => model.Medic.PrenumeMedic)
+        </dd>
+
+        <dt class="col-sm-2">
+            Specializare Medic
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Medic.Specializare)
+        </dd>
+
+        <dt class="col-sm-2">
+            Clinica
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Medic.Clinica)
+        </dd>
+        <hr />
+        <dt class="col-sm-2">
+            Data si Ora Programare
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataProgramare)
+        </dd>
+
+        <dt class="col-sm-2">
+            Categorie Servicii
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategorieServicii)
+        </dd>
+        <hr />
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sterge" class="btn btn-outline-danger mx-1 px-4" /> 
+        <a asp-action="Index"  class="btn btn-primary px-4">Inapoi la lista</a>
+    </form>
+</div>

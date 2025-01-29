@@ -1,0 +1,41 @@
+﻿@model ProgramareMedic.Models.Pacienti
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalii pacient</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nume)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nume)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Prenume)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Prenume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Varsta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Varsta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Adresa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+    </dl>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-danger px-4">Modifica</a>
+    <a asp-action="Index"  class="btn btn-primary px-4">Inapoi la lista</a>
+</div>

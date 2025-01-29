@@ -1,0 +1,73 @@
+﻿@model ProgramareMedic.Models.Programari
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalii programare</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nume Pacient
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pacient.Nume) @Html.DisplayFor(model => model.Pacient.Prenume)
+        </dd>
+
+        <dt class="col-sm-2">
+            Vârsta Pacient
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pacient.Varsta)
+        </dd>
+
+        <dt class="col-sm-2">
+            Adresa Pacient
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pacient.Adresa)
+        </dd>
+        <hr />
+        <dt class="col-sm-2">
+            Nume Medic
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Medic.NumeMedic) @Html.DisplayFor(model => model.Medic.PrenumeMedic)
+        </dd>
+
+        <dt class="col-sm-2">
+            Specializare Medic
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Medic.Specializare)
+        </dd>
+
+        <dt class="col-sm-2">
+            Clinica
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Medic.Clinica)
+        </dd>
+        <hr />
+        <dt class="col-sm-2">
+            Data si Ora Programare
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataProgramare)
+        </dd>
+
+        <dt class="col-sm-2">
+            Categorie Servicii
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategorieServicii)
+        </dd>
+        <hr />
+    </dl>
+</div>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-danger px-4">Modifica</a>
+    <a asp-action="Index" class="btn btn-primary px-4">Inapoi la lista</a>
+</div>
